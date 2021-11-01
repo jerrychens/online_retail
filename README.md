@@ -83,4 +83,4 @@ It's never wrong to recommend the overall popular items!!!
 
 ### Note
 
-Step-by-step python anlaysis and discussions can be found (here](retail.ipynb) 
+Step-by-step python anlaysis and discussions can be found [here](retail.ipynb) 
