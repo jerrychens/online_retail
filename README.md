@@ -3,9 +3,11 @@
 ## Dataset
 The source of the dataset [Online Retail Data Set](https://archive.ics.uci.edu/ml/datasets/Online+Retail#) is from UCI Machine Learning Repository
 
-### There are two parts of the analysis
+There are two parts of the analysis
 1. Customer segmentation using RFM
 2. Recommendation system using user-based implicit collaborative filtering
+
+
 
 ### Part 1: RFM Analysis
  - I am using RFM (Recency, Frequency, Monetary) analysis with 5x5x5 dimensions.
@@ -16,6 +18,7 @@ The source of the dataset [Online Retail Data Set](https://archive.ics.uci.edu/m
 
 It might not be practical to work on 5x5x5 = 125 RFM group individually. Some groups are too small, so it is hard for marketers to work on too many groups. Therefore, we combine some of the groups based on their RFM properties. We further assign customer segmentation for marketing purposes to give the marketers a clear goal to work on.
 
+
 #### Segment Description
 - VIPs: For those whose recent purchases are within 180 days and have bought more than 5 times in a year.
 - Potential loyalists: For those whose recent purchases are within 180 days and have bought 3-4 times in a year.
@@ -23,6 +26,7 @@ It might not be practical to work on 5x5x5 = 125 RFM group individually. Some gr
 - Good old friends: For those who have bought more than 3 times didn't purchase within 180 days.
 - New customers: For those who have only purchased once and their recent purchase is less than 30 days.
 - Hibernating: For those who have only purchased once, and their recent purchase has been more than 30 days.
+
 
 #### Actions
 - VIPs: Keep them happy (at any cost).
@@ -32,7 +36,9 @@ It might not be practical to work on 5x5x5 = 125 RFM group individually. Some gr
 - New customers: Make them want to purchase the second time; otherwise, they'll go hibernating.
 - Hibernating: We don't know them much, and they didn't purchase within a month. We need to guess to motivate them to buy another time.
 
+
 ![image](img/RFM.PNG)
+
 
 #### Short Summary
 1. High-frequency buyers (especially F-score = 5, frequency > 6/year) contribute the most to the company.
@@ -48,10 +54,13 @@ It might not be practical to work on 5x5x5 = 125 RFM group individually. Some gr
 8. We don't see many new customers joining in (4%), so the customer base is relatively stable.
 9. It's good to see we don't have too many people in the "Good old friends" group, which means those who purchased more than three times tend to stay and keep buying within 180 days cycle.
 
+
 #### Possible Improvements
 - RFM offers an intuitive way for segmentation, i.e., recency, frequency, and monetary values of the customers, which is easy to interpret by marketers. Marketers may use other techniques in customer segmentation such as K-means clustering, random forest. However, they are computationally expensive and hard to update the model on the fly. Therefore, for simplicity, the RFM model is still powerful in most cases.
 - The models can be more complex if we have more data, such as users' demographic data. Then, demographic, psychographic, behavioral, and geographic segmentation can come into play.
 - If we can run campaigns by preset AI, then we can have granular segmentation. Otherwise, we want to keep the numbers of the segments that can be run and controlled by marketers.
+
+
 
 
 ### Part 2: Recommender Systems
@@ -67,6 +76,17 @@ I useed implicit collaborative filtering models created by [Ben Frederickson](ht
 Let's pick 3 random customers and take a look.
 
 ![image](img/rec.PNG)
+
+
+#### Other recommendations?
+It's never wrong to recommend the overall popular items!!!
+
+
+#### Possible Improvements
+- The dataset contains mainly the UK region transactions. However, for the convenience of the analysis, we only consider the user purchase patterns regardless of the region. Therefore, if we have more data, region data can be considered in the model (or have different models for different regions).
+- We can have a train-test split based on time series or hide some of the purchases for each customer to evaluate the model performance or accuracy.
+- Other techniques like the ensemble method, sequence-to-sequence, or natural language processing can help decode the Description column. However, we need to model complexity and computational cost to perform real-time recommendations.
+
 
 ### Note
 
