@@ -47,13 +47,6 @@ It might not be practical to work on 5x5x5 = 125 RFM group individually. Some gr
 4. The number of new customers is quite low, so the company should lunch some customer acquisition campaigns.
 5. There are quite some low frequency and low recency score buyers, which means the customers may lose interest in the website or products. The company should dive deep to investigate and save this group because new customer acquisitions are expensive.
 
-![image](img/M.PNG)
-
-6. VIPs are the champian, which contributes the most, but it only contributes 25% of our total customers.
-7. Hibernating group has a lot of people (28%). Although they didn't make any recent purchase within 180 days, it accumulated moderate income. However, since we don't know them much, it's better to investigate why they only purchased once and left.
-8. We don't see many new customers joining in (4%), so the customer base is relatively stable.
-9. It's good to see we don't have too many people in the "Good old friends" group, which means those who purchased more than three times tend to stay and keep buying within 180 days cycle.
-
 
 #### Possible Improvements
 - RFM offers an intuitive way for segmentation, i.e., recency, frequency, and monetary values of the customers, which is easy to interpret by marketers. Marketers may use other techniques in customer segmentation such as K-means clustering, random forest. However, they are computationally expensive and hard to update the model on the fly. Therefore, for simplicity, the RFM model is still powerful in most cases.
